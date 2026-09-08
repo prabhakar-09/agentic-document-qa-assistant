@@ -1,6 +1,9 @@
 {
   "name": "Agentic Document QA Assistant",
   "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/git-lfs:1": {}
+  },
   "customizations": {
     "vscode": {
       "extensions": [
