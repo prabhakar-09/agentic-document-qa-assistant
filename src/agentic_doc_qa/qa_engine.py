@@ -116,11 +116,42 @@ def answer_question(question: str) -> str:
     return generate_answer(question, context)
 
 if __name__ == "__main__":
-    question = "How do I define a request body in FastAPI?"
+    # question = "How do I define a request body in FastAPI?"
+    # question = "How do I define query parameters in FastAPI?"
+    # question = "How do I upload files in FastAPI?"
+    # question = "How do I run background tasks in FastAPI?"
+    # question = "How do I configure CORS in FastAPI?" Failure case - query reformulation scope
+    # question = "FastAPI CORSMiddleware allow_origins"
+    question = "How do I configure CORS in FastAPI?"
     answer = answer_question(question)
 
     print("Question:")
     print(question)
 
-    print("\nAnswer:")
+    # print("\nAnswer:")
     print(answer)
+
+# Debugging failure case 
+# if __name__ == "__main__":
+#     docs = load_markdown_documents("data/raw_docs/fastapi/tutorial")
+#     chunks = split_documents(docs)
+
+#     cors_chunks = [
+#         chunk for chunk in chunks
+#         if chunk.metadata.get("source") == "cors.md"
+#     ]
+
+#     print("CORS chunks:", len(cors_chunks))
+
+#     for i, chunk in enumerate(cors_chunks, start=1):
+#         print(f"\n--- CORS Chunk {i} ---")
+
+#         interesting_tokens = [
+#             token
+#             for token in chunk.page_content.split()
+#             if "CORS" in token
+#             or "FastAPI" in token
+#             or "allow_origins" in token
+#         ]
+
+#         print(interesting_tokens[:30])
