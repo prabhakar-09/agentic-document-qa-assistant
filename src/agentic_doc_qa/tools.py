@@ -29,16 +29,18 @@ class FastAPIDocsRetrieverTool(Tool):
         if not retrieved_docs:
             return "No relevant information found in the FastAPI tutorial documentation."
 
-        result_text = "Retrieved FastAPI documentation:\n"
+        result_text = (
+            "Relevant FastAPI documentation snippets. "
+            "Use these snippets to write a concise answer. "
+            "Do not return this raw context directly.\n"
+        )
 
         for i, doc in enumerate(retrieved_docs, start=1):
             source = doc.metadata.get("source", "Unknown source")
             start_index = doc.metadata.get("start_index", "Unknown")
 
-            result_text += f"\n===== Result {i} =====\n"
-            result_text += f"Source: {source}\n"
-            result_text += f"Start index: {start_index}\n"
-            result_text += f"Content:\n{doc.page_content}\n"
+            result_text += f"\nSource: {source}\n"
+            result_text += f"Snippet:\n{doc.page_content[:800]}\n"
 
         return result_text
 
