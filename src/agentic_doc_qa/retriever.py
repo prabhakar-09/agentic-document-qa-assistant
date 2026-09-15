@@ -1,5 +1,13 @@
 from langchain_core.documents import Document
 from langchain_community.retrievers import BM25Retriever
+import re
+
+def preprocess_text(text: str) -> list[str]:
+    """
+    Normalize text for BM25 retrieval by removing Markdown formatting
+    and converting tokens to lowercase.
+    """
+    return re.findall(r"[a-z0-9_]+", text.lower())
 
 def build_bm25_retriever(
     chunks: list[Document],
@@ -11,7 +19,11 @@ def build_bm25_retriever(
     if not chunks:
         raise ValueError("Cannot build retriever because chunks list is empty.")
 
-    return BM25Retriever.from_documents(chunks, k=top_k)
+    return BM25Retriever.from_documents(
+        chunks,
+        k=top_k,
+        preprocess_func=preprocess_text,
+    )
 
 # Test
 if __name__ == "__main__":
