@@ -72,8 +72,13 @@ Answer the user's question using only the provided documentation context.
 Rules:
 - Do not use outside knowledge.
 - Do not guess.
-- If the context does not contain the answer, say:
-  "I could not find this information in the FastAPI tutorial documentation."
+- If the context does not contain the answer, return exactly:
+
+  Answer:
+  I could not find this information in the FastAPI tutorial documentation.
+
+  Sources:
+  - None
 - Write a concise answer in your own words.
 - Include a Sources section with only the source file names used.
 
@@ -122,7 +127,8 @@ if __name__ == "__main__":
     # question = "How do I run background tasks in FastAPI?"
     # question = "How do I configure CORS in FastAPI?" Failure case - query reformulation scope
     # question = "FastAPI CORSMiddleware allow_origins"
-    question = "How do I configure CORS in FastAPI?"
+    # question = "How do I configure CORS in FastAPI?"
+    question = "What is the capital of Japan?"
     answer = answer_question(question)
 
     print("Question:")
