@@ -20,7 +20,7 @@ The application retrieves relevant documentation using BM25 search and provides 
 The application is publicly deployed on Render.
 
 **Live application:**  
-[Open Agentic Document QA Assistant](YOUR_RENDER_URL_HERE)
+[Open Agentic Document QA Assistant](https://agentic-document-qa-assistant.onrender.com/)
 
 ## What This Project Does
 
