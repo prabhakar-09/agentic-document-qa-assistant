@@ -53,7 +53,9 @@ FastAPI Tutorial Markdown Files
      Grounded Answer
             ↓
         Gradio UI
-Key Features
+```
+## Key Features
+
 - Retrieval-Augmented Generation (RAG)
 - BM25 lexical retrieval
 - Markdown-aware text preprocessing
@@ -64,7 +66,8 @@ Key Features
 - Hugging Face hosted model inference
 - Public deployment using Render
 
-Technology Stack
+## Technology Stack
+
 - Python 3.12
 - LangChain
 - BM25 / rank-bm25
@@ -75,8 +78,8 @@ Technology Stack
 - Render
 - GitHub Codespaces
 
-Project Structure
-
+## Project Structure
+```text
 agentic-document-qa-assistant/
 │
 ├── app/
@@ -102,3 +105,4 @@ agentic-document-qa-assistant/
 ├── requirements.txt
 ├── pyproject.toml
 └── README.md
+```
