@@ -1,4 +1,5 @@
 import gradio as gr
+import os
 from agentic_doc_qa.qa_engine import answer_question
 
 def ask_fastapi_docs(question: str) -> str:
@@ -32,5 +33,5 @@ demo = gr.Interface(
 if __name__ == "__main__":
     demo.launch(
         server_name="0.0.0.0",
-        server_port=7860,
+        server_port=int(os.getenv("PORT", "7860")),
     )
