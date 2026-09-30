@@ -53,8 +53,7 @@ FastAPI Tutorial Markdown Files
      Grounded Answer
             ↓
         Gradio UI
-```text
-## Key Features
+Key Features
 - Retrieval-Augmented Generation (RAG)
 - BM25 lexical retrieval
 - Markdown-aware text preprocessing
